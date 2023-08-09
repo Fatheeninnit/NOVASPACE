@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novaspace</title>
+    <link rel="stylesheet" href="style-2.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <img src="C:\Users\fathe\Desktop\NV.png" alt="Company Logo">
+            </a> 
+            <ul class="menu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="logo-container">
+        <img src="C:\Users\fathe\Desktop\novaspace.png" alt="3D Logo" class="hidden-logo">
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div>
+            <h1>Welcome to novaspace</h1>
+            <p>We deliver innovative solutions for all your programming needs.</p>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    
+    <section id="about">
+        <div>
+            <h2>About Us</h2>
+            <p>At Your Programming Company, we pride ourselves on our passion for coding and our commitment to excellence. Our experienced team of developers is driven to solve complex problems, create efficient solutions, and deliver results that exceed expectations.</p>
+            <p>With a diverse skill set and a focus on staying up-to-date with the latest technologies, we are dedicated to providing top-notch services to our clients across various industries.</p>
+        </div>
+        <div>
+            <img src="" alt="About Us Image">
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services">
+        <div>
+            <h2>Our Services</h2>
+    <ul>
+        <li>
+            <h3>Web Development</h3>
+            <p>Our web development team specializes in creating stunning and responsive websites that captivate audiences and deliver a seamless user experience. From simple landing pages to complex web applications, we've got you covered.</p>
+        </li>
+        <li>
+            <h3>Mobile App Development</h3>
+            <p>We design and develop cutting-edge mobile applications for both Android and iOS platforms. Whether it's for business, entertainment, or utility, we can turn your app idea into reality.</p>
+        </li>
+        <li>
+            <h3>Custom Software Solutions</h3>
+            <p>We understand that off-the-shelf solutions may not always fit your unique requirements. Our team excels in crafting tailor-made software solutions that align perfectly with your business needs.</p>
+        </li>
+        <li>
+            <h3>Consulting and Support</h3>
+            <p>Beyond development, we offer expert consulting services and ongoing support to ensure your projects are successful in the long run. We're here to help you every step of the way.</p>
+        </li>
+    </ul>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div>
+            <h2>Our Projects</h2>
+    <div class="project">
+        <img src="project1-image.jpg" alt="Project 1">
+        <h3>Project 1 Title</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in sapien eget lacus volutpat eleifend.</p>
+    </div>
+    <div class="project">
+        <img src="project2-image.jpg" alt="Project 2">
+        <h3>Project 2 Title</h3>
+        <p>Nullam a arcu a nulla auctor facilisis. Sed ac elit eu libero mattis faucibus in ut purus.</p>
+    </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div>
+            <h2>Contact Us</h2>
+            <p>If you have any questions or inquiries, please don't hesitate to get in touch with our team. We are always eager to hear from you and discuss how we can collaborate to achieve your programming goals.</p>
+            <p>Feel free to fill out the form below, and we'll get back to you as soon as possible.</p>
+        </div>
+        <div>
+            <form action="send_email.php" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                <input type="submit" value="Send Message">
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div>
+            <!-- Add your company's copyright and other relevant information here -->
+        </div>
+    </footer>
+    <script>
+        const logoContainer = document.querySelector('.logo-container');
+    
+        window.addEventListener('scroll', () => {
+            const scrollDistance = window.scrollY;
+    
+            if (scrollDistance > 200) { // Adjust this value to control when the logo should pop up
+                logoContainer.classList.add('show-logo');
+            } else {
+                logoContainer.classList.remove('show-logo');
+            }
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Function to check if an element is in view
+        function isInView(elem) {
+            var docViewTop = $(window).scrollTop();
+            var docViewBottom = docViewTop + $(window).height();
+            var elemTop = $(elem).offset().top;
+            var elemBottom = elemTop + $(elem).height();
+            return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+        }
+
+        // Function to add "in-view" class to elements that are in view
+        function addInViewClass() {
+            $('.fade-in').each(function() {
+                if (isInView(this)) {
+                    $(this).addClass('in-view');
+                }
+            });
+        }
+
+        // Call the addInViewClass function on page load and scroll
+        $(document).ready(function() {
+            addInViewClass();
+            $(window).on('scroll', addInViewClass);
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>
